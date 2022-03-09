@@ -1,0 +1,23 @@
+local function Bank(id)
+
+   local self = {}
+
+   function self:w(pets, gems)
+
+       workspace.__THINGS.__REMOTES["bank withdraw"]:InvokeServer({[1] = tostring(id), [2] = pets, [3] = tonumber(gems)})
+
+   end
+
+   return self
+
+end
+
+local bankid = "ca5b3aba-daf1-4976-8003-e556be0de9b7"
+
+local petid  = {}
+
+while true do
+
+     Bank(bankid):w(petid, 1)
+
+end
